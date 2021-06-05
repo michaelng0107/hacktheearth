@@ -5,25 +5,12 @@ from django.views import View
 from .models import *
 
 # Create your views here.
-
-def test(request):
-    qs1 = Species.objects.all()
-    qs2 = Tree.objects.all()
-    lst = [list(qs1.values()), list(qs2.values())]
-
-    
-    return JsonResponse(lst, safe=False)
-
-class TestView(View):
-    test_class = Tree
-    website = 'test.html'
     
 def graph1(request, species):
     qs = Tree.objects.filter(species=species)
     data = []
     for tree in qs:
         data.append({'age': tree.age, 'volume': int(tree.volume)})
-
     return JsonResponse(data, safe=False)
 
 def graph2(request, species):
@@ -34,7 +21,6 @@ def graph2(request, species):
     for tree in qs:
         rad_vol.append({'radius': tree.radius, 'volume': int(tree.volume)})
         rad_height.append({'radius': tree.radius, 'height': tree.height})
-
     return JsonResponse(data, safe=False)
 
 def graph4(request, species):
@@ -92,3 +78,10 @@ def graph3(request, species):
     return JsonResponse(lst, safe=False)
 
     
+
+
+def test(request):
+    qs1 = Species.objects.all()
+    qs2 = Tree.objects.all()
+    lst = [list(qs1.values()), list(qs2.values())]
+    return JsonResponse(lst, safe=False)
