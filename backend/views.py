@@ -7,9 +7,12 @@ from .models import *
 # Create your views here.
 
 def test(request):
-    qs = TestDB.objects.all()
+    qs1 = Species.objects.all()
+    qs2 = Tree.objects.all()
+    lst = [list(qs1.values()), list(qs2.values())]
+
     
-    return JsonResponse(list(qs.values()), safe=False)
+    return JsonResponse(lst, safe=False)
 
 class TestView(View):
     test_class = Tree
