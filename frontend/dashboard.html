@@ -4,6 +4,7 @@
         <title>Tree Analyzer</title>
         <link rel="stylesheet" href="./static/style.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body class="home-body">
         <aside>
@@ -16,7 +17,10 @@
             <a class="logout" href="index.html"><p>Logout</p><span class="material-icons md-24">logout</span></a>
             <!-- <a href="index.html" class="logout">Log Out<span class="material-icons md-24">logout</span></a> -->
         </aside>
-        <main id="one"></main>
+        <main id="one">
+            <!-- [scatter][Scatter MultiAxis][Bar][Bubble] -->
+            <canvas id="myChart" style="background-color: white;"></canvas>
+        </main>
         <main id="two" class="hide"></main>
         <main id="three" class="hide"></main>
 
@@ -24,7 +28,34 @@
         <script src="./index.js"></script>
         <script>
             setup()
+            
+            const labels = [
+                'January',
+                'February',
+                'March',
+                'April',
+                'May',
+                'June',
+            ];
+
+            const data = {
+            labels: labels,
+            datasets: [{
+                label: 'My First dataset',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [0, 10, 5, 2, 20, 30, 45],
+                }]
+            };
+
+            const config = {
+                type: 'line',
+                data,
+                options: {}
+            };
+
+            var myChart = new Chart(document.querySelector('#myChart'),config);
         </script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        
     </body>
 </html>

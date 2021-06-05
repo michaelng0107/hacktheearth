@@ -44,7 +44,7 @@
     color: white;
     font-size: 1.5rem;
     text-align: center;
-    width: 40%;
+    width: 90%;
     margin: auto;
     padding-top: 1rem; }
   .home-content a {
@@ -101,7 +101,9 @@ aside {
       padding-left: 20px;
       padding-top: 10px;
       padding-bottom: 10px;
-      border-top: solid 1px #bfbfbf; }
+      border-top: solid 1px #bfbfbf;
+      transition: all .3s;
+      user-select: none; }
       aside ul li span {
         color: white;
         transform: translateY(3px); }
@@ -113,11 +115,18 @@ aside {
         padding-left: 10px; }
       aside ul li:hover {
         background-color: #292929;
-        cursor: pointer; }
+        cursor: pointer;
+        transform: scaleY(1.05) translateY(-5px); }
         aside ul li:hover > a {
-          color: #00c406; }
+          color: #68ed6c; }
         aside ul li:hover > span {
-          color: #00c406; }
+          color: #68ed6c; }
+
+.selected > a {
+  color: #68ed6c; }
+
+.selected > span {
+  color: #68ed6c; }
 
 .logout {
   padding-left: 20px;

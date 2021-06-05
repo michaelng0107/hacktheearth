@@ -3,6 +3,8 @@ const buttonvisual = document.querySelector("#vbutton");
 const buttonplan = document.querySelector("#pbutton");
 const buttonstats = document.querySelector("#sbutton");
 
+let onpage = buttonvisual
+
 //PAGES
 const visualize = document.querySelector("#one");
 const plan = document.querySelector("#two");
@@ -12,32 +14,57 @@ const setup = () => {
     console.log("Staring Up!")
     visualize.classList.remove("hide");
     plan.classList.add("hide");
-    stats.classList.add("hide")
+    stats.classList.add("hide");
+    buttonvisual.classList.add("selected")
 }
 
 //API CALLS
-const chart = window.chart;
+const apitest = (data) => {
+    console.log(data);
+    console.log(data[0]);
+    console.log(data[0].height);
 
-const request = fetch("http://127.0.0.1:8000/test/").then((response) => {console.log(response); return response.json()}).then((data) => {console.log(data);});
+
+}
+
+const getGraph = (graphnumber, specie) =>{
+    let url = "http://127.0.0.1:8000/graph" + graphnumber + "/" + specie;
+    fetch(url).then((response) => {console.log(response); return response.json()}).then((data) => {apitest(data);});
+}
+
+getGraph(2,1);
+
+// const request = fetch("http://127.0.0.1:8000/test/").then((response) => {console.log(response); return response.json()}).then((data) => {apitest(data);});
+
+const changeLabels = (button) => {
+    onpage.classList.remove("selected");
+    button.classList.add("selected");
+    onpage = button;
+}
 
 buttonvisual.addEventListener("click", (e) => {
-    console.log("HIII");
+
     visualize.classList.remove("hide");
     plan.classList.add("hide");
-    stats.classList.add("hide")
+    stats.classList.add("hide");
+    changeLabels(buttonvisual);
 });
 
 buttonplan.addEventListener("click", (e) => {
-    console.log("HIII")
+
+ 
     plan.classList.remove("hide");
     visualize.classList.add("hide");
-    stats.classList.add("hide")
+    stats.classList.add("hide");
+    changeLabels(buttonplan);
 });
 
 buttonstats.addEventListener("click", (e) => {
-    console.log("HIII")
+
+
     stats.classList.remove("hide");
     visualize.classList.add("hide");
-    plan.classList.add("hide")
+    plan.classList.add("hide");
+    changeLabels(buttonstats);
 })
 
