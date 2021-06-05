@@ -11,5 +11,7 @@ def test(request):
     
     return JsonResponse(list(qs.values()), safe=False)
 
-
+class TestView(View):
+    test_class = Tree
+    website = 'test.html'
 
