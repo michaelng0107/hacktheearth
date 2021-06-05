@@ -17,6 +17,32 @@ def test(request):
 class TestView(View):
     test_class = Tree
     website = 'test.html'
+    
+def graph1(request, species):
+    qs = Tree.objects.filter(species=species)
+    data = []
+    for tree in qs:
+        data.append({'age': tree.age, 'volume': int(tree.volume)})
+
+    return JsonResponse(data, safe=False)
+
+def graph2(request, species):
+    qs = Tree.objects.filter(species=species)
+    rad_vol = []
+    rad_height = []
+    data = [rad_height, rad_vol]
+    for tree in qs:
+        rad_vol.append({'radius': tree.radius, 'volume': int(tree.volume)})
+        rad_height.append({'radius': tree.radius, 'height': tree.height})
+
+    return JsonResponse(data, safe=False)
+
+def graph4(request, species):
+    qs = Tree.objects.filter(species=species)
+    data = []
+    for tree in qs:
+        data.append({'height': tree.age, 'volume': int(tree.volume), 'profit': int(tree.value)})
+    return JsonResponse(data, safe=False)
 
 
 def graph3(request, species):
