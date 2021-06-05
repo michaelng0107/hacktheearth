@@ -1,16 +1,15 @@
 from django.shortcuts import render
-
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
 from django.views import View
-
-from .models import Test
+from .models import *
 
 # Create your views here.
 
-class TestView(View):
-    test_class = Test
-    website = 'test.html'
+def test(request):
+    qs = TestDB.objects.all()
+    
+    return JsonResponse(list(qs.values()), safe=False)
 
-    def get(self, request):
-        return render(request, self.website, {})
+
+
