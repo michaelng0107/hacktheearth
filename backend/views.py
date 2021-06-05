@@ -5,7 +5,7 @@ from django.views import View
 from .models import *
 
 # Create your views here.
-    
+
 def graph1(request, species):
     qs = Tree.objects.filter(species=species)
     data = []
@@ -77,11 +77,17 @@ def graph3(request, species):
     lst = [data1, data2]
     return JsonResponse(lst, safe=False)
 
-    
-
 
 def test(request):
     qs1 = Species.objects.all()
     qs2 = Tree.objects.all()
     lst = [list(qs1.values()), list(qs2.values())]
     return JsonResponse(lst, safe=False)
+
+
+def species(request):
+    qs = Species.objects.all()
+    data = []
+    for spec in qs:
+        data.append({f'{spec.id}': spec.name})
+    return JsonResponse(data, safe=False)    
