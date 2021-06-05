@@ -1,0 +1,23 @@
+{
+  "name": "hacktheearth",
+  "version": "1.0.0",
+  "description": "Hack the Earth Project 2021",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass" : "node-sass ./frontend/static/style.scss ./frontend/static/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelng0107/hacktheearth.git"
+  },
+  "author": "Jax, Ryan, Michael",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaelng0107/hacktheearth/issues"
+  },
+  "homepage": "https://github.com/michaelng0107/hacktheearth#readme",
+  "dependencies": {
+    "node-sass": "^6.0.0"
+  }
+}
