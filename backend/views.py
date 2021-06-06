@@ -79,7 +79,18 @@ def graph3(request, species):
 
 def species_data(request, species):
     qs = Species.objects.filter(id=species)
-    return JsonResponse(list(qs.values()), safe=False)  
+    all_qs = Species.objects.all()
+
+    specie = list(qs.values())
+
+    profit = []
+    for i in all_qs:
+        profit.append({f'{i.name}':f'{i.profits}'})
+    print(profit)
+
+    return JsonResponse([specie, profit], safe=False)  
+
+
 
 def species(request):
     qs = Species.objects.all()
