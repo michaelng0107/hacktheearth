@@ -8,4 +8,9 @@ urlpatterns = [
     path('graph4/<int:species>/', views.graph4, name='graph4'),
     path('species/', views.species, name='species'),
     path('species_data/<int:species>/', views.species_data, name='species_data'),
+
+
+
+
+    path('all_trees/', views.all_trees, name='all_trees'), # test
 ]

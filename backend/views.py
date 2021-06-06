@@ -98,3 +98,7 @@ def species(request):
     for spec in qs:
         data.append({f'{spec.id}': spec.name})
     return JsonResponse(data, safe=False)    
+
+def all_trees(request):
+    qs = Tree.objects.all()
+    return JsonResponse(list(qs.values()), safe=False)
