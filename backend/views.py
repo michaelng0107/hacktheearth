@@ -88,7 +88,21 @@ def species_data(request, species):
         profit.append({f'{i.name}':f'{i.profits}'})
     print(profit)
 
-    return JsonResponse([specie, profit], safe=False)  
+    tc = Tree.objects.all().count()
+    s1_total = Tree.objects.filter(species=1).count()
+    s2_total = Tree.objects.filter(species=2).count()
+    s3_total = Tree.objects.filter(species=3).count()
+    s4_total = Tree.objects.filter(species=4).count()
+    s5_total = Tree.objects.filter(species=5).count()
+    s6_total = Tree.objects.filter(species=6).count()
+    s7_total = Tree.objects.filter(species=7).count()
+    s8_total = Tree.objects.filter(species=8).count()
+    
+    total_trees = [s1_total/tc, s2_total/tc, s3_total/tc, s4_total/tc, s5_total/tc, s6_total/tc, s7_total/tc, s8_total/tc]
+    pie_chart_data = [round(elem, 2)*100 for elem in total_trees]
+    
+
+    return JsonResponse([specie, profit, pie_chart_data], safe=False)  
 
 
 
