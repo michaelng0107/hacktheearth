@@ -91,3 +91,7 @@ def species(request):
     for spec in qs:
         data.append({f'{spec.id}': spec.name})
     return JsonResponse(data, safe=False)    
+
+def species_test(request):
+    qs = Species.objects.all()
+    return JsonResponse(list(qs.values()), safe=False)    

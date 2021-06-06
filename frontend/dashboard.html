@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="./static/style.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     </head>
     <body class="home-body">
         <aside>
@@ -19,7 +20,7 @@
         </aside>
         <main id="one">
             <!-- [scatter][Scatter MultiAxis][Bar][Bubble] -->
-            <canvas id="myChart" style="background-color: white;"></canvas>
+            <canvas id="myChart" style="background-color: white; width: 900px; margin-top: 10px;"></canvas>
         </main>
         <main id="two" class="hide"></main>
         <main id="three" class="hide"></main>
@@ -29,49 +30,29 @@
         <script>
             setup()
             
-            const DATA_COUNT = 7;
-            const NUMBER_CFG = {count: DATA_COUNT, rmin: 1, rmax: 1, min: 0, max: 100};
+            // const DATA_COUNT = 7;
+            // const NUMBER_CFG = {count: DATA_COUNT, rmin: 1, rmax: 1, min: 0, max: 100};
 
-            const labels = Utils.months({count: 7});
+            // const labels = Utils.months({count: 7});
+
             
-            const data = {
-            labels: labels,
-            datasets: [
-                {
-                label: 'Dataset 1',
-                data: Utils.bubbles(NUMBER_CFG),
-                borderColor: Utils.CHART_COLORS.red,
-                backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
-                },
-                {
-                label: 'Dataset 2',
-                data: Utils.bubbles(NUMBER_CFG),
-                borderColor: Utils.CHART_COLORS.orange,
-                backgroundColor: Utils.transparentize(Utils.CHART_COLORS.orange, 0.5),
-                }
-            ]
-            };
 
-            const configscatter = {
-            type: 'scatter',
-            data: data,
-            options: {
-                responsive: true,
-                plugins: {
-                legend: {
-                    position: 'top',
-                },
-                title: {
-                    display: true,
-                    text: 'Chart.js Scatter Chart'
-                }
-                }
-            },
-            };
+            // console.log(species);
 
-            var myChart = new Chart(document.querySelector('#myChart'),configscatter);
 
-            console.log(species);
+            // {
+            //             label: 'Dataset 1',
+            //             data: [0, 10, 5, 2, 20, 30, 45],
+            //             borderColor: 'rgb(255, 99, 132)',
+            //             backgroundColor: 'rgb(255, 99, 132)',
+            //         },
+            //         {
+            //             label: 'Dataset 2',
+            //             data: [35, 20, 25, 11, 14, 9, 6],
+            //             borderColor: 'rgb(104, 237, 108)',
+            //             backgroundColor: 'rgb(0, 153, 161)',
+            //         }
+                
         </script>
         
     </body>
