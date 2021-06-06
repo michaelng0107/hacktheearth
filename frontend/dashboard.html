@@ -30,11 +30,10 @@
                 <div id="maple">Maple Tree</div>
             </div>
             <!-- [scatter][Scatter MultiAxis][Bar][Bubble] -->
-            <div class="scatter-graph" style="width: 80%; padding: 15px; background-color: white; margin: auto; margin-top: 20px; border-radius: 20px; border: solid 3px black;">
+            <div class="scatter-graph" style="width: 80%; padding: 15px; background-color: white; margin: auto; margin-top: 30px; border-radius: 20px; border: solid 3px black;">
                 <canvas id="scatterChart"></canvas>
             </div>
 
-            
 
             <div class="bar-graph" style="width: 80%; padding: 15px; background-color: white; margin: auto; margin-top: 20px; border-radius: 20px; border: solid 3px black;">
                 <canvas id="barChart"></canvas>
@@ -43,16 +42,63 @@
             <div class="bubble-graph" style="width: 80%; padding: 15px; background-color: white; margin: auto; margin-top: 20px; border-radius: 20px; border: solid 3px black;">
                 <canvas id="bubbleChart"></canvas>
             </div>
-
-            <div class="scattermulti-graph" style="width: 80%; padding: 15px; background-color: white; margin: auto; margin-top: 20px; border-radius: 20px; border: solid 3px black;">
+            <div style="height: 20px;"></div>
+            <!-- <div class="scattermulti-graph" style="width: 80%; padding: 15px; background-color: white; margin: auto; margin-top: 20px; border-radius: 20px; border: solid 3px black;">
                 <canvas id="scattermultiChart"></canvas>
-            </div>
+            </div> -->
             
         </main>
-        <main id="two" class="hide"></main>
+        <main id="two" class="hide">
+            <div style="height: 20px;"></div>
+
+            <h2>Priority: There are 7 Oak trees and 6 Pine trees that are heavily wounded (> 30%)</h2>
+            <h2>Trees that have more than 10% of mushrooms, with visible surface roots:</h2>
+            <div style="height: 30px;"></div>
+            <p>Elm Tree: 10</p>
+            <p>Birch Tree: 16</p>
+            <p>Willow Tree: 28</p>
+            <p>Fir Tree: 7</p>
+            <p>Oak Tree: 15</p>
+            <p>Beech Tree: 26</p>
+            <p>Pine Tree: 37</p>
+            <p>Maple Tree: 48</p>
+            <p style="text-align: center;">Total trees that are suggested to be cut: 166</p>
+            <p  style="text-align: center; border-top: none; padding-top: 2px;">Estimated profit: $25000</p>
+
+        </main>
         <main id="three" class="hide">
-            <div class="bar-graph" style="width: 80%; padding: 15px; background-color: white; margin: auto; margin-top: 20px; border-radius: 20px; border: solid 3px black;">
-                <canvas id="barChart"></canvas>
+            <div class="specieliststats">
+                <div id="elmstats">Elm Tree</div>
+                <div id="birchstats">Birch Tree</div>
+                <div id="willowstats">Willow Tree</div>
+                <div id="firstats">Fir Tree</div>
+                <div id="oakstats">Oak Tree</div>
+                <div id="beechstats">Beech Tree</div>
+                <div id="pinestats">Pine Tree</div>
+                <div id="maplestats">Maple Tree</div>
+            </div>
+            <div style="height: 30px;"></div>
+            <div class="gay">
+                <div class="statistics">
+                    <p id="namestats">Name: Elm Tree</p>
+                    <p id="abundencestats">Abundence: 60000</p>
+                    <p id="profitsstats">Profits: 27</p>
+                    <p id="maxheightstats">Max Height: 35</p>
+                    <p id="moisturestats">Moisture: 27</p>
+                    <p id="soilstats">Soil: 27</p>
+                    <p id="shadestats">Shade: 27</p>
+                    </div>
+                <div style="height: 30px;"></div>
+                <img src="" alt="" id="imagestats">
+            </div>
+           
+
+            <div class="bar-graph" style="width: 80%; padding: 15px; background-color: white; margin: auto; border-radius: 20px; border: solid 3px black; margin-top: 40px;">
+                <canvas id="statsChartone"></canvas>
+            </div>
+
+            <div class="bar-graph" style="width: 80%; padding: 15px; background-color: white; margin: auto; border-radius: 20px; border: solid 3px black; margin-top: 40px;">
+                <canvas id="statsCharttwo"></canvas>
             </div>
         </main>
 

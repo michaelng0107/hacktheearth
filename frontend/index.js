@@ -81,8 +81,8 @@ const data1 = {
 
     datasets: [
         {
-            label: species[0],
-            data: [],
+            label: 'Elm Tree',
+            data: [{"age": 232, "volume": 11309}, {"age": 174, "volume": 9952}, {"age": 263, "volume": 16625}, {"age": 280, "volume": 17520}, {"age": 160, "volume": 14162}, {"age": 296, "volume": 10643}, {"age": 228, "volume": 8494}, {"age": 209, "volume": 10643}, {"age": 165, "volume": 50}, {"age": 252, "volume": 12930}, {"age": 211, "volume": 10263}, {"age": 246, "volume": 351}, {"age": 210, "volume": 1583}, {"age": 240, "volume": 3619}, {"age": 147, "volume": 6283}, {"age": 159, "volume": 7853}, {"age": 202, "volume": 14476}, {"age": 216, "volume": 3817}, {"age": 182, "volume": 4398}, {"age": 237, "volume": 11149}, {"age": 169, "volume": 12063}, {"age": 237, "volume": 4561}, {"age": 194, "volume": 2463}, {"age": 207, "volume": 4156}, {"age": 191, "volume": 1256}, {"age": 218, "volume": 4071}, {"age": 195, "volume": 5852}, {"age": 155, "volume": 6597}, {"age": 270, "volume": 4580}, {"age": 110, "volume": 9500}, {"age": 67, "volume": 7225}, {"age": 134, "volume": 13546}, {"age": 119, "volume": 6283}, {"age": 210, "volume": 7602}, {"age": 168, "volume": 2670}, {"age": 197, "volume": 4624}],
             borderColor: 'rgb(255, 99, 132)',
             backgroundColor: 'rgb(255, 99, 132)',
         }
@@ -142,7 +142,7 @@ const configscatter = {
             },
             title: {
                 display: true,
-                text: 'Radius vs Volume Scatter'
+                text: 'Tree Age vs Volume Scatter'
             }
             
         },
@@ -224,18 +224,18 @@ const configscattermulti = {
 };
 
 const data3 = {
-    labels: ["One", "Two", "Three", "Four", "Five"],
+    labels: ['0%-20%', '21%-40%', '41%-60%', '61%-80%', '81%-100%'],
 
     datasets: [
         {
-            label: 'True',
+            label: 'Has Surface Roots',
             data: [8.61, 0, 0, 0, 0],
             borderColor: 'rgb(255, 99, 132)',
             backgroundColor: 'rgb(255, 99, 132)',
 
         },
         {
-            label: 'False',
+            label: 'No Surface Roots',
             data: [8.64, 11.0, 0, 0, 0],
             borderColor: 'rgb(219, 237, 166)',
             backgroundColor: 'rgb(219, 237, 166)',
@@ -256,7 +256,7 @@ const configbar = {
         },
         title: {
           display: true,
-          text: 'Graph 3'
+          text: 'Trunk Wounds Vs. Mushrooms'
         }
       }
     },
@@ -289,7 +289,7 @@ const configbubble = {
         },
         title: {
           display: true,
-          text: 'Height Vs. Volume Bubble Chart'
+          text: 'Height Vs. Volume Vs. Profit Bubble Chart'
         }
       },
 
@@ -347,9 +347,7 @@ const getGraph = (graphnumber, specie) =>{
             data4.datasets[0].label = species[specie-1];
             data4.datasets[0].data = data;
         }
-        else if(graphnumber == 2){
 
-        }
         console.log(data1.datasets[0].data);
         setCharts();
 
@@ -428,11 +426,163 @@ maplebutton.addEventListener("click", (e) => {
 
 
 
+// 'Elm Tree': 'rgb(255, 99, 132)'
+// 'Birch Tree': 'rgb(219, 237, 166)'
+// 'Willow Tree': 'rgb(129, 240, 96)'
+// 'Fir Tree': 'rgb(38, 143, 7)'
+// 'Oak Tree': 'rgb(171, 106, 15)'
+// 'Beech Tree': 'rgb(219, 222, 38)'
+// 'Pine Tree': 'rgb(26, 201, 140)'
+// 'Maple Tree': 'rgb(227, 66, 66)'
 
-setTimeout(function(){ setCharts(); }, 1000);
+const datastatsone = {
+    labels: ["Elm Tree", "Birch Tree", "Willow Tree", "Fir Tree", "Oak Tree", "Beech Tree", "Pine Tree", "Maple Tree"],
+
+    datasets: [
+        {
+            label: ['Profit'],
+            data: [27, 50, 33, 29, 32, 41, 37, 50],
+            borderColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgb(37, 219, 98)',
+
+        },
+
+        
+    ]
+};
+
+const configbarstatsone = {
+    type: 'bar',
+    data: datastatsone,
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Tree Profits'
+        }
+      }
+    },
+};
+
+const datastatstwo = {
+    labels: ["Elm Tree", "Birch Tree", "Willow Tree", "Fir Tree", "Oak Tree", "Beech Tree", "Pine Tree", "Maple Tree"],
+
+    datasets: [
+        {
+            label: ['Abundence %'],
+            data: [4.0, 13.0, 12.0, 6.0, 8.0, 12.0, 18.0, 26.0],
+            borderColor: 'rgb(37, 219, 98)',
+            backgroundColor: 'rgb(37, 219, 98)',
+
+        },
+
+        
+    ]
+};
+
+const configbarstatstwo = {
+    type: 'bar',
+    data: datastatstwo,
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Tree Abundence'
+        }
+      }
+    },
+};
+
+
+
+const elmbuttonstats = document.querySelector("#elmstats");
+const birchbuttonstats = document.querySelector("#birchstats");
+const willowbuttonstats = document.querySelector("#willowstats");
+const furbuttonstats = document.querySelector("#firstats");
+const oakbuttonstats = document.querySelector("#oakstats");
+const beechbuttonstats = document.querySelector("#beechstats");
+const pinebuttonstats = document.querySelector("#pinestats");
+const maplebuttonstats = document.querySelector("#maplestats");
+
+const namestats = document.querySelector("#namestats");
+const abundencestats = document.querySelector("#abundencestats");
+const profitsstats = document.querySelector("#profitsstats");
+const maxheightstats = document.querySelector("#maxheightstats");
+const moisturestats = document.querySelector("#moisturestats");
+const soilstats = document.querySelector("#soilstats");
+const shadestats = document.querySelector("#shadestats");
+const imglink = document.querySelector("#imagestats");
+
+
+
+
+var chartstatsone = new Chart(document.querySelector("#statsChartone"), configbarstatsone);
+var chartstatstwo = new Chart(document.querySelector("#statsCharttwo"), configbarstatstwo);
+
+
+const getStats = (specie) => {
+    let url = 'http://127.0.0.1:8000/species_data/' + specie;
+    fetch(url).then((response) => {return response.json()}).then((data) => {
+        console.log(data[0][0].name);
+        namestats.innerHTML = "Name: " + data[0][0].name;
+        abundencestats.innerHTML = "Abundence: " + data[0][0].abundence;
+        profitsstats.innerHTML = "Profits: " + data[0][0].profits;
+        maxheightstats.innerHTML = "Max Height: " + data[0][0].max_height;
+        moisturestats.innerHTML = "Moisture: " + data[0][0].moisture;
+        soilstats.innerHTML = "Soil: " + data[0][0].soil;
+        shadestats.innerHTML = "Shade: " + data[0][0].shade;
+        imglink.src = data[0][0].link;
+    });
+
+}
+
+elmbuttonstats.addEventListener('click', (e) => {
+    getStats(1);
+
+})
+
+birchbuttonstats.addEventListener('click', (e) => {
+    getStats(2)
+})
+
+willowbuttonstats.addEventListener('click', (e) => {
+    getStats(3)
+})
+
+furbuttonstats.addEventListener('click', (e) => {
+    getStats(4)
+})
+
+oakbuttonstats.addEventListener('click', (e) => {
+    getStats(5)
+})
+
+beechbuttonstats.addEventListener('click', (e) => {
+    getStats(6)
+})
+
+pinebuttonstats.addEventListener('click', (e) => {
+    getStats(7)
+})
+
+maplebuttonstats.addEventListener('click', (e) => {
+    getStats(8)
+})
+
+
+
+// setTimeout(function(){ setCharts(); }, 1000);
 
 setup()
-
+getStats(1);
 
 
 

@@ -159,11 +159,44 @@ main {
   overflow: scroll; }
 
 #two {
-  background-color: aqua; }
+  background-color: white; }
+  #two > h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    width: 80%;
+    text-align: left;
+    margin: auto;
+    margin-top: 10px; }
+  #two > p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: solid 1px #bfbfbf;
+    width: 80%;
+    text-align: left;
+    margin: auto; }
+
+.gay {
+  height: min-content;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  justify-content: space-between; }
+  .gay > img {
+    display: block;
+    margin: auto;
+    margin-top: 10px; }
+
+.statistics > p {
+  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 10px; }
 
 #three {
-  background-color: #00c406;
-  border: solid 5px black; }
+  background-color: white;
+  overflow: scroll; }
 
 .hide {
   display: none; }
@@ -175,10 +208,43 @@ main {
   margin: auto;
   height: 40px;
   justify-content: space-between;
-  align-items: stretch; }
+  align-items: stretch;
+  flex-wrap: wrap;
+  height: min-content; }
   .specielist > div {
     background-color: #00c406;
-    padding: 10px; }
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    flex: 1;
+    text-align: center;
+    border-left: solid 1px #deffe9;
+    vertical-align: middle; }
     .specielist > div:hover {
+      cursor: pointer;
+      background-color: #09920d; }
+
+.specieliststats {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: auto;
+  height: 40px;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  height: min-content; }
+  .specieliststats > div {
+    background-color: #00c406;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    flex: 1;
+    text-align: center;
+    border-left: solid 1px #deffe9;
+    vertical-align: middle; }
+    .specieliststats > div:hover {
       cursor: pointer;
       background-color: #09920d; }
