@@ -77,13 +77,9 @@ def graph3(request, species):
     lst = [data1, data2]
     return JsonResponse(lst, safe=False)
 
-
-def test(request):
-    qs1 = Species.objects.all()
-    qs2 = Tree.objects.all()
-    lst = [list(qs1.values()), list(qs2.values())]
-    return JsonResponse(lst, safe=False)
-
+def species_data(request, species):
+    qs = Species.objects.filter(id=species)
+    return JsonResponse(list(qs.values()), safe=False)  
 
 def species(request):
     qs = Species.objects.all()
@@ -91,7 +87,3 @@ def species(request):
     for spec in qs:
         data.append({f'{spec.id}': spec.name})
     return JsonResponse(data, safe=False)    
-
-def species_test(request):
-    qs = Species.objects.all()
-    return JsonResponse(list(qs.values()), safe=False)    
