@@ -6,6 +6,11 @@ class Species(models.Model):
     name = models.CharField(max_length=100, unique=True)
     abundence = models.PositiveIntegerField(null=True, blank=True)
     profits = models.IntegerField(null=True, blank=True)
+    max_height = models.IntegerField(null=True, blank=True)
+    moisture = models.CharField(max_length=200, null=True, blank=True)
+    soil = models.CharField(max_length=200, null=True, blank=True)
+    shade = models.CharField(max_length=200, null=True, blank=True)
+    link = models.URLField( null=True, blank=True)
 
     def __str__(self):
         return f"{self.name}"

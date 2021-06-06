@@ -8,5 +8,5 @@ urlpatterns = [
     path('graph3/<int:species>/', views.graph3, name="graph3"),
     path('graph4/<int:species>/', views.graph4, name='graph4'),
     path('species/', views.species, name='species'),
-
+    path('species_test/', views.species_test, name='species_test'),
 ]
