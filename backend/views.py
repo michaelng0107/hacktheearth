@@ -27,7 +27,7 @@ def graph4(request, species):
     qs = Tree.objects.filter(species=species)
     data = []
     for tree in qs:
-        data.append({'height': tree.age, 'volume': int(tree.volume), 'profit': int(tree.value)})
+        data.append({'height': tree.age, 'volume': int(tree.volume), 'r': int((int(tree.value)/50000))})
     return JsonResponse(data, safe=False)
 
 

@@ -19,16 +19,47 @@
             <!-- <a href="index.html" class="logout">Log Out<span class="material-icons md-24">logout</span></a> -->
         </aside>
         <main id="one">
+            <div class="specielist">
+                <div id="elm">Elm Tree</div>
+                <div id="birch">Birch Tree</div>
+                <div id="willow">Willow Tree</div>
+                <div id="fir">Fir Tree</div>
+                <div id="oak">Oak Tree</div>
+                <div id="beech">Beech Tree</div>
+                <div id="pine">Pine Tree</div>
+                <div id="maple">Maple Tree</div>
+            </div>
             <!-- [scatter][Scatter MultiAxis][Bar][Bubble] -->
-            <canvas id="myChart" style="background-color: white; width: 900px; margin-top: 10px;"></canvas>
+            <div class="scatter-graph" style="width: 80%; padding: 15px; background-color: white; margin: auto; margin-top: 20px; border-radius: 20px; border: solid 3px black;">
+                <canvas id="scatterChart"></canvas>
+            </div>
+
+            
+
+            <div class="bar-graph" style="width: 80%; padding: 15px; background-color: white; margin: auto; margin-top: 20px; border-radius: 20px; border: solid 3px black;">
+                <canvas id="barChart"></canvas>
+            </div>
+
+            <div class="bubble-graph" style="width: 80%; padding: 15px; background-color: white; margin: auto; margin-top: 20px; border-radius: 20px; border: solid 3px black;">
+                <canvas id="bubbleChart"></canvas>
+            </div>
+
+            <div class="scattermulti-graph" style="width: 80%; padding: 15px; background-color: white; margin: auto; margin-top: 20px; border-radius: 20px; border: solid 3px black;">
+                <canvas id="scattermultiChart"></canvas>
+            </div>
+            
         </main>
         <main id="two" class="hide"></main>
-        <main id="three" class="hide"></main>
+        <main id="three" class="hide">
+            <div class="bar-graph" style="width: 80%; padding: 15px; background-color: white; margin: auto; margin-top: 20px; border-radius: 20px; border: solid 3px black;">
+                <canvas id="barChart"></canvas>
+            </div>
+        </main>
 
         
         <script src="./index.js"></script>
         <script>
-            setup()
+            
             
             // const DATA_COUNT = 7;
             // const NUMBER_CFG = {count: DATA_COUNT, rmin: 1, rmax: 1, min: 0, max: 100};

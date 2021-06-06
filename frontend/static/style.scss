@@ -207,8 +207,8 @@ main{
 }
 
 #one{
-    background-color: red;
-    
+    background-color: white;
+    overflow: scroll;
 }
 
 #two{
@@ -224,5 +224,25 @@ main{
 
 .hide{
     display: none;
+}
+
+.specielist{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: auto;
+    height: 40px;
+    justify-content: space-between;
+    align-items: stretch;
+
+    & > div{
+        background-color: #00c406;
+        padding: 10px;
+
+        &:hover{
+            cursor: pointer;
+            background-color: #09920d;
+        }
+    }
 }
 
