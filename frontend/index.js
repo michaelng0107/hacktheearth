@@ -32,9 +32,16 @@ const getGraph = (graphnumber, specie) =>{
     fetch(url).then((response) => {console.log(response); return response.json()}).then((data) => {apitest(data);});
 }
 
-getGraph(2,1);
+// getGraph(2,1);
 
-// const request = fetch("http://127.0.0.1:8000/test/").then((response) => {console.log(response); return response.json()}).then((data) => {apitest(data);});
+let species = []
+
+const getspecies = fetch("http://127.0.0.1:8000/species").then((response) => {console.log(response); return response.json()}).then((data) => {
+    for(let i = 0; i < data.length; i++){
+
+        species[i] = data[i][i+1];
+    }
+});
 
 const changeLabels = (button) => {
     onpage.classList.remove("selected");

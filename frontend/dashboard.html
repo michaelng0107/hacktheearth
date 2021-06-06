@@ -29,32 +29,49 @@
         <script>
             setup()
             
-            const labels = [
-                'January',
-                'February',
-                'March',
-                'April',
-                'May',
-                'June',
-            ];
+            const DATA_COUNT = 7;
+            const NUMBER_CFG = {count: DATA_COUNT, rmin: 1, rmax: 1, min: 0, max: 100};
 
+            const labels = Utils.months({count: 7});
+            
             const data = {
             labels: labels,
-            datasets: [{
-                label: 'My First dataset',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45],
-                }]
+            datasets: [
+                {
+                label: 'Dataset 1',
+                data: Utils.bubbles(NUMBER_CFG),
+                borderColor: Utils.CHART_COLORS.red,
+                backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
+                },
+                {
+                label: 'Dataset 2',
+                data: Utils.bubbles(NUMBER_CFG),
+                borderColor: Utils.CHART_COLORS.orange,
+                backgroundColor: Utils.transparentize(Utils.CHART_COLORS.orange, 0.5),
+                }
+            ]
             };
 
-            const config = {
-                type: 'line',
-                data,
-                options: {}
+            const configscatter = {
+            type: 'scatter',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Chart.js Scatter Chart'
+                }
+                }
+            },
             };
 
-            var myChart = new Chart(document.querySelector('#myChart'),config);
+            var myChart = new Chart(document.querySelector('#myChart'),configscatter);
+
+            console.log(species);
         </script>
         
     </body>
