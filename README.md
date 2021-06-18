@@ -1,5 +1,5 @@
 # Tree Analyzer
-A tool that analyzes forestry data to improve decision-making with regards to land use.
+A tool that analyzes forestry data to improve decision-making with regard to land use.
 
 # What did we use?
 * Python + Django (Backend)
